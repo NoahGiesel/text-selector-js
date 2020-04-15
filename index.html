@@ -4,36 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Selection</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h2>Paste in your text :</h2>
+
+
     <textarea id=Textarea></textarea> 
     <br>
-    <button onclick="getSelectedText()">Click here</button>
-      <script type='text/javascript'>
-
-    const textarea = document.getElementById("Textarea") ;
-
-
-      function getSelectedText() { 
-           alert(textarea) 
-          if (window.getSelection) {
-              return window.getSelection().toString();
-          } else if (document.selection) {
-              return document.selection.createRange().text;
-          }
-          return '';
-      }
-      var b = document.getElementsByTagName('body')[0],
-          o = document.getElementById('output');
-      b.onmouseup = function(e){
-          var selText = getSelectedText(),
-              targetElem = e.target.tagName.toLowerCase();
-          if (selText && targetElem == 'p') {
-              o.textContent = 'You selected the text: "' + selText + '" from a ' + targetElem + ' element.';
-          }
-      };
-      </script>
+    <button onclick="getSelectedText()">Click here</button> 
   
     <script src="./app.js"></script>
 </body>
